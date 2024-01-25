@@ -17,7 +17,7 @@ const Navigation = () => {
     const  dayjs = require("dayjs")
     let date = (dayjs().format('MMMM DD, YYYY'))
   return (
-    <div className=' w-full flex justify-between items-center p-3 font-sans'>
+    <div className=' w-full flex justify-between items-center p-3 font-sans border border-[#E5EAEF]'>
 {/**Dashboard title */}
         <div className='w-9/12'>
             <p className='font-semibold text-lg '>Dashboard</p>
