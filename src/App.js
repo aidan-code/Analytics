@@ -12,10 +12,13 @@ function App() {
         <Sidebar />
       </div>
 
-      <div className='flex flex-col  w-full'>
+      <div className='flex flex-col w-full'>
         <Navigation />
-        <div className='grid-rows-2'>
+        <div className='grid-cols-2 py-6 px-4 h-full border'>
           <Charts />
+
+{/**the table section */}
+          
         </div>
       </div>
     </div>

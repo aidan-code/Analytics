@@ -9,12 +9,12 @@ ChartJS.register(
 const Charts = () => {
 
 
-
+    
     const [Chartdata, setChartData] = useState({
         labels:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         datasets:[{
-            labels: "Users Gained",
-            data: ["7.00", "16.000", "5.000", "26.000", '15.000', '45.000', '15.000', '23.000', '35.000', '4.000', '30.000', '26.000'],
+            labels: "Users",
+            data: ["7.00", "16.000", "5.000", "26.000", '15.000', '45.000', '15.000', '23.000', '35.000', '14.000', '30.000', '26.000'],
             borderRadius:50,
             borderWidth: 0,
             hoverBackgroundColor: (context) =>{
@@ -37,6 +37,7 @@ const Charts = () => {
     })
 
     const options = {
+        maintainAspectRatio: false,
         type:'bar',
         scales: {
             x: {
@@ -61,19 +62,44 @@ const Charts = () => {
                 dash:[10, 10],
                 color:"#EAEAEA"
               },
+              grace: "10%",
             ticks: {
-                min:0,
-                max:50.000,
-                precision: 0, 
-                // callback: function (value) {
-                //     // Format the labels with thousand separators
-                //     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                //   },// Set the number of decimal places
+                stepSize:4,
+                precision: 1,
+                maxTicksLimit: 9,
               },
              
           },
         },
+
         plugins: {
+            tooltip:{
+                yAlign:'bottom',
+                displayColors:false,
+                callback: ((context, index) =>{
+                    console.log(context)
+                    let response;
+                        if(context === 1){
+                            response = "$5.000";
+                        } else if (index === 2){
+                            response ="$10.000"
+                        } else if (index === 3){
+                            response = "$20.000"
+                        } else if (index === 4) {  
+                            response = "$30.000"
+                        }else if (index === 5){
+                            response ="$40.000"
+                        }else if (index === 6){
+                             response = "$50.000";
+                        } else {
+                            response = "0"
+                       
+                        }
+                           
+
+                    return response;
+                })
+            },
           legend: {
             display: false,
             position: 'top',
@@ -91,7 +117,12 @@ const Charts = () => {
         
         },
         layout: {
-          padding: 10,
+           padding: {
+                left: 20, // Set left padding for the entire chart
+                right: 20, // Set right padding for the entire chart
+                top: 10, // Set top padding for the entire chart
+                bottom: 10, // Set bottom padding for the entire chart
+      },
         },
         responsive: true,
         // maintainAspectRatio: false,
@@ -111,7 +142,7 @@ const Charts = () => {
     }
 
     return (
-        <div className='w-1/2 h-4/5 '>
+        <div className='w-1/2 h-96 border p-3 rounded-xl border-back'>
             <Bar  data={Chartdata} options={options}/>
         </div>
     )
