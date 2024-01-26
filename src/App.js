@@ -5,6 +5,7 @@ import Sidebar from './Components /Sidebar';
 import Charts from './Resources/Charts';
 import Table from './Components /Table';
 import Stat from './Components /Stat';
+import ProgressBar from './Resources/ProgressBar';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 
       <div className='flex flex-col w-full'>
         <Navigation />
-        <div className='grid grid-rows-3 grid-cols-3 gap-3  py-6 px-4 h-full bg-[#FAFAFA]'>
+        <div className='grid grid-rows-2 grid-cols-3 gap-3  py-6 px-4 h-full bg-[#FAFAFA]'>
           <div className="col-span-2 h-fit">
               <Charts  />
           </div>
@@ -29,6 +30,11 @@ function App() {
           {/**the table section */}
           <div className="col-span-2">
             <Table />
+         </div>
+
+         {/**the Progress bar section */}
+         <div>
+          <ProgressBar />
          </div>
           
         </div>
