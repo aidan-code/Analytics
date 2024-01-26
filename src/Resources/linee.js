@@ -1,91 +1,32 @@
 import React, { useState, useEffect } from 'react'
-import { Bar } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS, Legend, Tooltip } from 'chart.js/auto'
 
 ChartJS.register(
     Tooltip, Legend
 ) 
 
-const monthUpdate = 
-        {
-            
-            period: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-            values: ["7.00", "16.000", "5.000", "26.000", '15.000', '45.000', '15.000', '23.000', '35.000', '14.000', '30.000', '26.000'],
-        }
-
-        
-
-    const weekUpdate = 
-        {
-            period: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-            values: ["7.00", "16.000", "5.000", "26.000", '15.000', '45.000', '15.000'],
-        }
     
-const Charts = () => {
-
-    const [durate, setdurate] = useState(1)
-
-    const[displayData, setDisplayData] = useState([])
-
-    // console.log(monthUpdate['label01'])
-
-
-
-   
-
-    const handleChange = (e) =>{
-        setdurate(e.target.value);
-        console.log(durate)
-        setDisplayData(monthUpdate)
-
-
-    }
-
-    // console.log(displayData)
-    // console.log(displayData.values)
-
-    useEffect(() =>{
-        
-        if (durate === 1){
-            setDisplayData(monthUpdate)
-            console.log(displayData.period)
-        } else if (durate === 2){
-         setDisplayData(weekUpdate)
-         console.log(displayData.period)
-
-        }
-    }, [durate])
-
-    
+const Lines = ({color, fillColor}) => {    
     const [Chartdata, setChartData] = useState({                    
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         datasets:[{
             labels: "Users",
             data: ["7.00", "16.000", "5.000", "26.000", '15.000', '45.000', '15.000', '23.000', '35.000', '14.000', '30.000', '26.000'],
             borderRadius:50,
-            borderWidth: 0,
-            hoverBackgroundColor: (context) =>{
-                const chart = context.chart;
-                const { ctx, chartArea} = chart;
-
-                if (!chartArea){
-                    return null
-                }
-
-                if(context.dataIndex >= 0){
-                    return getGradient(chart);
-                } else {
-                    return 'black'
-                }
-                
-            },
-            backgroundColor: '#34CAA51A '
+            borderColor: color,
+            borderWidth: 2,
+            pointRadius: 0, // Set pointRadius to 0 to remove the circles
+            pointHoverRadius: 0, // Set pointHoverRadius to 0 to remove hover circles
+            backgroundColor:fillColor,
+            fill: true,
         }]
     })
 
     const options = {
+        responsive:true,
         maintainAspectRatio: false,
-        type:'bar',
+        type:'line',
         scales: {
             x: {
                 // beginAtZero: false,
@@ -93,15 +34,25 @@ const Charts = () => {
                 grid: {
                   drawBorder: false,
                   display: false,
-                  zeroLineWidth: 0,
+                  zeroLineWidth: false,
+                  color: (ctx) =>{
+                    const lines = ctx.chart.scales.y.ticks.length-1; 
+                    return "green"
+                  }
                   // Set to false to hide vertical grid lines
+                
                 },
+
+                ticks:{
+                    color: "#ffffff"
+                  }
+
             },
           y: {
             beginAtZero: true,
             grid: {
-               
-                lineWidth: 0.5,
+               display: false,
+                lineWidth: 0,
                 // drawBorder:false,
                 
               },
@@ -111,6 +62,7 @@ const Charts = () => {
               },
               grace: "10%",
             ticks: {
+                color: "#ffffff",
                 stepSize:4,
                 precision: 1,
                 maxTicksLimit: 9,
@@ -165,10 +117,10 @@ const Charts = () => {
         },
         layout: {
            padding: {
-                left: 20, // Set left padding for the entire chart
-                right: 20, // Set right padding for the entire chart
-                top: 20, // Set top padding for the entire chart
-                bottom: 20, // Set bottom padding for the entire chart
+                // left: 20, // Set left padding for the entire chart
+                // right: 20, // Set right padding for the entire chart
+                // top: 20, // Set top padding for the entire chart
+                // bottom: 20, // Set bottom padding for the entire chart
       },
         },
         responsive: true,
@@ -180,7 +132,7 @@ const Charts = () => {
         const {ctx, chartArea: {top, bottom, left, right} } = chart
         const gradientSegment = ctx.createLinearGradient(0, top, 0, bottom)
         gradientSegment.addColorStop(0.5, "#34CAA5 ");
-        gradientSegment.addColorStop(0.75, "#34caa418  ")       
+        gradientSegment.addColorStop(0.75, "#  ")       
         gradientSegment.addColorStop(0.75, "#34caa418  ") 
 
         return gradientSegment;
@@ -189,22 +141,10 @@ const Charts = () => {
     }
 
     return (
-        <div className='w-[100%] h-[400px] border p-5 rounded-xl border-back  bg-white'>
-            <div className='flex justify-between'>
-                <div className='text-lg font-semibold'>Sales Trends</div>
-
-                <div className='flex items-center justify-between'>
-                    <p className='mr-3'>Sort by:</p>
-                    <select name="timeframe" onChange={handleChange} value={durate} className='p-2 border border-back rounded-full text-sm flex items-center'>
-                        <option value ="1" >monthly</option>
-                        <option value="2">weekly</option>
-                    </select>
-                </div>
-            </div>    
-
-            <Bar  data={Chartdata} options={options}/>
+        <div className='w-[100px] h-[70px] overflow-hidden' >
+            <Line data={Chartdata} options={options}/>
         </div>
     )
 }
 
-export default Charts
+export default Lines

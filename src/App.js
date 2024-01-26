@@ -3,6 +3,8 @@ import './App.css';
 import Navigation from './Components /Navigation';
 import Sidebar from './Components /Sidebar';
 import Charts from './Resources/Charts';
+import Table from './Components /Table';
+import Stat from './Components /Stat';
 
 function App() {
   return (
@@ -14,10 +16,20 @@ function App() {
 
       <div className='flex flex-col w-full'>
         <Navigation />
-        <div className='grid-cols-2 py-6 px-4 h-full border'>
-          <Charts />
+        <div className='grid grid-rows-3 grid-cols-3 gap-3  py-6 px-4 h-full bg-[#FAFAFA]'>
+          <div className="col-span-2 h-fit">
+              <Charts  />
+          </div>
 
-{/**the table section */}
+        {/**the stat section */}
+        <div>
+          <Stat />
+        </div>
+
+          {/**the table section */}
+          <div className="col-span-2">
+            <Table />
+         </div>
           
         </div>
       </div>
