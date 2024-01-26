@@ -33,8 +33,19 @@ function App() {
          </div>
 
          {/**the Progress bar section */}
-         <div>
-          <ProgressBar />
+         <div className='p-4 bg-white rounded-xl overflow-hidden  h-[407px]'>
+         <div className='flex items-center justify-between mb-3'>
+            <p className='font-semibold text-lg'>Top platform</p>
+            <p className='text-[#34CAA5]'>See all</p>
+         </div>
+         <div >
+            <ProgressBar name ="Book Bazaar" color="#6160DC" progress=" $2,500,000 " increment="+15%" value="75"/>
+            <ProgressBar name ="Artisan Aisle" color="#54C5EB" progress="$1,800,000" increment="+10%" value="50"/>
+            <ProgressBar name ="Toy Troop" color="#FFB74A" progress="$1,200,000" increment="+10%" value="35"/>
+            <ProgressBar name ="X Store" color="#FF4A55" progress="$1,200,000" increment="+10%" value="25"/>
+
+         </div>
+         
          </div>
           
         </div>

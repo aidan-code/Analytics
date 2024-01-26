@@ -25,24 +25,25 @@ const Sidebar = () => {
   return (
     <div className='bg-white'>
 
-        <div className='bg-back h-[53rem] p-3 flex flex-col justify-between px-5'>
+        <div className='bg-back h-[53rem] flex flex-col justify-between '>
 
         <div className='flex flex-col'>
 
-            <div className='pb-7 pt-2'>
+            <div className='pb-7 pt-2 px-5'>
                 <img src={vector}/>
             </div>
         
             <div className='flex flex-col'>
                 {Navdata.map((data, index) => {
                         return(
-                            <div key={index} className='mb-3'>
+                            <div key={index} className='px-5 py-0 mb-3 relative '>
                                 <img src={data} />
+                                <div className={index === 0 ? 'absolute right-0 top-1 h-4/5 w-[3px] bg-black rounded-l-lg' : 'hidden'}></div>
                             </div>
                         ) 
                     })}
 
-                    <div className='bg-white flex flex-col rounded-full items-center py-2'>
+                    <div className='bg-white flex flex-col mx-4 items-center py-2 rounded-full'>
                         <img src={sun} className='mb-3'/>
                         <img src={moon}/>
                     </div>
