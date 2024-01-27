@@ -190,9 +190,9 @@ const Charts = () => {
     }
 
     return (
-        <div className='w-[100%] h-[400px] border p-5 rounded-xl border-back  bg-white'>
-            <div className='flex justify-between'>
-                <div className='text-lg font-semibold'>Sales Trends</div>
+        <div className='w-full h-[400px] py-3 lg:w-[100%] lg:h-[400px] border lg:p-5 rounded-xl border-back  bg-white overflow-hidden'>
+            <div className='flex justify-between items-center px-2'>
+                <div className='lg:text-lg font-semibold'>Sales Trends</div>
 
                 <div className='flex items-center justify-between'>
                     <p className='mr-3'>Sort by:</p>

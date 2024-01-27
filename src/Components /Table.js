@@ -6,20 +6,20 @@ import savee from '../Assets/savee.svg'
 
 const Table = () => {
   return (
-    <div className='border border-back py-6 px-4 rounded-xl h-full font-sans bg-white'>
+    <div className='border border-back py-6 px-4 rounded-xl h-full  font-sans bg-white overflow-hidden'>
         <div className='flex justify-between'>
-            <p className='font-semibold text-lg'>Last Orders</p>
+            <p className='text:xs font-semibold lg:text-lg'>Last Orders</p>
             <p className='text-[#34CAA5]'>See all</p>
         </div>
 
-        <div className='w-full'>
+        <div className='w-[100%] lg:w-full lg:text-sm text-[9px] overflow-scroll lg:overflow-auto'>
             <table className='table-auto w-full font-sans' >
                 <thead className=' border-b border-back text-[#9CA4AB]'>
-                    <tr className='text-left '>
-                        <th className='py-2'>Name</th>
-                        <th>Date</th>
-                        <th>Amount</th>
-                        <th>Status</th>
+                    <tr className='text-left'>
+                        <th className='py-2 mr-2 w-96'>Name</th>
+                        <th className='w-96'>Date</th>
+                        <th className=''>Amount</th>
+                        <th className=''>Status</th>
                         <th className='p-0'>Invoice</th>
                     </tr>
                 </thead>
@@ -28,8 +28,8 @@ const Table = () => {
                     {TableData.map((data, index) => {
                         return(
                             <tr key={index} className='border-b border-back py-4 text-left'>
-                                <td className='flex items-center justify-start p-3'>
-                                    <img src={data.image} className='mr-3'/>
+                                <td className='flex items-center justify-start p-0 lg:p-3'>
+                                    <img src={data.image} className='mr-2 py-1 lg:py-0'/>
                                     {data.name}
                                 </td>
                                 <td className='text-[#737373] font-thin'>{data.date}</td>

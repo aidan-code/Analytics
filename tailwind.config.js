@@ -10,6 +10,7 @@ module.exports = {
       white: "#FFFFFF",
       black: "#000000",
     },
+    darkMode: "class",
     fontFamily:{
       "sans" : ["Plus Jakarta Sans", "sans-serif"]
     }

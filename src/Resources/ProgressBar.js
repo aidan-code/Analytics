@@ -11,9 +11,9 @@ const ProgressBar = (props) => {
         }
     }, [filled, dispValue])
   return (
-    <div  className='h-full my-4 font-sans'> 
-        <p className='font-semibold text-s'>{props.name}</p>
-        <div className='h-[15px] w-full bg-[#F5F5F5] rounded-full my-3'>
+    <div  className='h-full mb-4 font-sans text-[9px] lg:text-base'> 
+        <p className='font-semibold text-s mb-2'>{props.name}</p>
+        <div className='h-[15px] w-full bg-[#F5F5F5] rounded-full mb-3'>
             <div style={{
                 height:"100%",
                 width:`${filled}%`,
@@ -23,7 +23,7 @@ const ProgressBar = (props) => {
             }}></div>
         </div>
         <div className='flex items-center justify-between' >
-            <p className='my-1-'>{props.progress}%</p>
+            <p className='mb-1'>{props.progress}%</p>
             <p>{props.increment}</p>
         </div>
     </div>

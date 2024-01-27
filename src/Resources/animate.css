@@ -1,0 +1,13 @@
+.slideout{
+    animation: Slideout .5s ease-in-out;
+}
+
+@keyframes Slideout{
+    0%{
+        transform: translateX(-50%);
+    }
+
+    100%{
+        transform: translateX(0%);
+    }
+}

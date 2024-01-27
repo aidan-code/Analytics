@@ -141,7 +141,7 @@ const Lines = ({color, fillColor}) => {
     }
 
     return (
-        <div className='w-[100px] h-[70px] overflow-hidden' >
+        <div className='w-[70px] h-[70px] overflow-hidden' >
             <Line data={Chartdata} options={options}/>
         </div>
     )
