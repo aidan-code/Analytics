@@ -190,13 +190,13 @@ const Charts = () => {
     }
 
     return (
-        <div className='w-full h-[400px] py-3 lg:w-[100%] lg:h-[400px] border lg:p-5 rounded-xl border-back  bg-white overflow-hidden'>
+        <div className='w-full h-[400px] py-3 lg:w-[100%] lg:h-[400px] border lg:p-5 rounded-xl border-back  bg-white overflow-hidden dark:bg-dark dark:text-white dark:border-0'>
             <div className='flex justify-between items-center px-2'>
                 <div className='lg:text-lg font-semibold'>Sales Trends</div>
 
                 <div className='flex items-center justify-between'>
                     <p className='mr-3'>Sort by:</p>
-                    <select name="timeframe" onChange={handleChange} value={durate} className='p-2 border border-back rounded-full text-sm flex items-center'>
+                    <select name="timeframe" onChange={handleChange} value={durate} className='p-2 border border-back rounded-full text-sm flex items-center dark:bg-dark dark:border-[#e5eaef45]'>
                         <option value ="1" >monthly</option>
                         <option value="2">weekly</option>
                     </select>

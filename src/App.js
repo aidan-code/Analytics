@@ -19,30 +19,32 @@ function App() {
   }
 
   useEffect(()=>{
-    if (theme ==="dark"){
+    if (theme === "dark"){
       document.documentElement.classList.add("dark")
     } else{
       document.documentElement.classList.remove("dark")
-
+      console.log(theme)
     }
   }, [theme])
 
+
+
   const handleChange =() =>{
-    setTheme(theme === "dark" ? "light" : "dark")
+    setTheme(theme === "light" ? "dark" : "light")
     setClicker(!clicker)
+    console.log(theme)
   }
 
-  console.log(theme)
   return (
-    <div className='flex items-start'>
+    <div className='flex items-start dark:bg-dark'>
       
       <div className=' h-dvh'>
         <Sidebar change ={handleChange} state={clicker} showNav={navHide} onclick ={handleShow}/>
       </div>
 
-      <div className='flex flex-col w-full'>
+      <div className='border border-[#E5EAEF] flex flex-col w-full h-dvh dark:border-[#e5eaef45]'>
         <Navigation onclick ={handleShow}/>
-        <div className=' py-6 px-4 h-full bg-[#FAFAFA] lg:grid grid-cols-3 grid-rows-2 gap-3'>
+        <div className=' py-6 px-4 h-full bg-[#FAFAFA]  dark:bg-dark lg:grid grid-cols-3 grid-rows-2 gap-3'>
           <div className="col-span-2 overflow-hidden">
               <Charts  />
           </div>
@@ -58,12 +60,12 @@ function App() {
          </div>
 
          {/**the Progress bar section */}
-         <div className='p-4 bg-white rounded-xl overflow-hidden  h-[405px]'>
+         <div className='p-4 bg-white rounded-xl overflow-hidden  h-[405px] dark:bg-dark dark:text-white'>
          <div className='flex items-center justify-between mb-3'>
             <p className='font-semibold text-lg'>Top platform</p>
             <p className='text-[#34CAA5]'>See all</p>
          </div>
-         <div >
+         <div className='dark:bg-transparent'>
             <ProgressBar name ="Book Bazaar" color="#6160DC" progress=" $2,500,000 " increment="+15%" value="70"/>
             <ProgressBar name ="Artisan Aisle" color="#54C5EB" progress="$1,800,000" increment="+10%" value="50"/>
             <ProgressBar name ="Toy Troop" color="#FFB74A" progress="$1,200,000" increment="+10%" value="35"/>

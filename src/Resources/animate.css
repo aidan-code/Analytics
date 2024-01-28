@@ -11,3 +11,18 @@
         transform: translateX(0%);
     }
 }
+
+.showlight{
+    animation: showlight .5s;
+    transform: translateY(130%);
+}
+
+@keyframes showlight{
+    0%{
+        transform: translateY(0%);
+    }
+
+    100%{
+        transform: translateY(130%);
+    }
+}

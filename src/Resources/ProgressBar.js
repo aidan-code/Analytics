@@ -13,7 +13,7 @@ const ProgressBar = (props) => {
   return (
     <div  className='h-full mb-4 font-sans text-[9px] lg:text-base'> 
         <p className='font-semibold text-s mb-2'>{props.name}</p>
-        <div className='h-[15px] w-full bg-[#F5F5F5] rounded-full mb-3'>
+        <div className='h-[15px] w-full bg-[#F5F5F5] rounded-full mb-3 '>
             <div style={{
                 height:"100%",
                 width:`${filled}%`,

@@ -23,7 +23,7 @@ const Navigation = ({onclick}) => {
         setSearch(!search)
     }
   return (
-    <div className=' w-full flex justify-between items-center p-3 font-sans border border-[#E5EAEF] relative'>
+    <div className='border-b border-b-[#E5EAEF] w-full flex justify-between items-center p-3 font-sans border-b-1 dark:border dark:border-b-[#e5eaef45] relative'>
 {/**Dashboard title */}
         <div className='w-9/12 flex items-center'>
             <div className='w-[20px] mx-2 lg:hidden' onClick={onclick}v>
@@ -31,13 +31,13 @@ const Navigation = ({onclick}) => {
                 <div className='h-0.5 border bg-black my-1 rounded-full'></div>
                 <div className='h-0.5 border bg-black my-1 rounded-full'></div>
             </div>
-                <p className='font-semibold lg:text-lg text-xs'>Dashboard</p>
+                <p className='font-semibold lg:text-lg text-xs dark:text-white'>Dashboard</p>
         </div>
 {/**Naviagtion, searchbar, date , notification and the profile picture*/}
 
         <div className='w-full flex items-center justify-end lg:justify-between  '>
         
-            <div className= 'border-back border rounded-full p-1 lg:p-2 flex items-center lg:w-[40%]' onClick={showSearch}>
+            <div className= 'border-back border rounded-full p-1 lg:p-2 flex items-center lg:w-[40%] dark:bg-[#e5eaef45] dark:border-[#e5eaef45]' onClick={showSearch}>
 
                 <IconContext.Provider value={{color: 'gray', size: '14px'}}>
                 <CiSearch />
@@ -52,7 +52,7 @@ const Navigation = ({onclick}) => {
                             <CiSearch />
                             </IconContext.Provider>
                             <div className='mx-2'>
-                                <input className='text-[#A3A3A3] outline-none' placeholder="Search..." type='text'/>
+                                <input className='text-[#A3A3A3] outline-none border-0 bg-transparent'  placeholder="Search..." type='text'/>
                             </div>
                        </div>
                    
@@ -64,7 +64,7 @@ const Navigation = ({onclick}) => {
                 <img src={group} />
 
                 <div>
-                    <p className='mx-3 font-medium hidden lg:block lg:w-full lg:text-xs xl:text-xl'>{date}</p>
+                    <p className='mx-3 font-medium hidden lg:block lg:w-full lg:text-xs xl:text-sm dark:text-white'>{date}</p>
                 </div>
 
                 <div className='rounded-full border border-back p-1 ml-2'>
@@ -73,7 +73,7 @@ const Navigation = ({onclick}) => {
             </div>
 
 
-            <div className='flex items-center border border-back rounded-full py-1 px-2'>
+            <div className='flex items-center border border-back rounded-full py-1 px-2 dark:border-[#e5eaef45] dark:text-white'>
                 <img src={profile} className='h-7'/>
  
                 <div className='mx-3 hidden lg:block'>

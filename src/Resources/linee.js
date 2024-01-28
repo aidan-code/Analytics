@@ -35,24 +35,31 @@ const Lines = ({color, fillColor}) => {
                   drawBorder: false,
                   display: false,
                   zeroLineWidth: false,
-                  color: (ctx) =>{
-                    const lines = ctx.chart.scales.y.ticks.length-1; 
-                    return "green"
-                  }
+                  color: "black"
+                   
                   // Set to false to hide vertical grid lines
                 
                 },
 
                 ticks:{
-                    color: "#ffffff"
+                    display:false,
+                  },
+                  border:{
+                    width:0,
+                    color:false ,
                   }
+                
 
             },
+
           y: {
             beginAtZero: true,
             grid: {
                display: false,
                 lineWidth: 0,
+                color:"#000",
+                borderColor:"#000"
+
                 // drawBorder:false,
                 
               },
@@ -66,7 +73,13 @@ const Lines = ({color, fillColor}) => {
                 stepSize:4,
                 precision: 1,
                 maxTicksLimit: 9,
+                display:false,
               },
+
+              border:{
+                width:0,
+                color:false ,
+              }
              
           },
         },
@@ -141,7 +154,7 @@ const Lines = ({color, fillColor}) => {
     }
 
     return (
-        <div className='w-[70px] h-[70px] overflow-hidden' >
+        <div className='w-[70px] h-[40px] overflow-hidden' >
             <Line data={Chartdata} options={options}/>
         </div>
     )

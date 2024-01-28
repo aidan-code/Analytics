@@ -6,14 +6,14 @@ import Lines from '../Resources/linee'
 
 const Stat = () => {
   return (
-    <div className='grid grid-cols-2 grid-rows-2  gap-2.5 font-sans text-xs ' >
+    <div className='grid grid-cols-2 grid-rows-2  gap-2.5 font-sans text-xs' >
 
         {Statdata.map((data, index) => {
             return (
-            <div key={index} className='p-2  bg-white rounded-xl relative border border-[#EDF2F7] h-full lg:h-[195px] sm:py-3 sm px-2'>
+            <div key={index} className='p-2  bg-white rounded-xl relative border border-[#EDF2F7] h-full lg:h-[195px] sm:py-3 sm px-2 hover:shadow-xl  dark:bg-dark dark:border-[#e5eaef45]'>
         {/**the icon per stat */}
                 <div className='flex items-center justify-between my-1'>
-                    <img src={data.svg} alt="check"/>
+                    <img src={data.svg} alt="check" />
                     
                     <div className='absolute right-0.5 top-2'>
                         <Lines color={data.color === "green" ? "#34CAA5" : "#ED544E"}  fillColor={data.color === "green" ? "#34CAA51F" : "#ED544E1F"}/>
@@ -22,8 +22,8 @@ const Stat = () => {
 
                 {/**the title & value per stat */   }
                 <div className='text-lg text-xl my-5'>
-                    <p className='text-xl lg:text-base text-[#898989]'>{data.title}</p>
-                    <p className='text-2xl text-black font-semibold lg:text-2xl '>{data.value}</p>
+                    <p className='text-xl lg:text-base text-[#898989] dark:text-white'>{data.title}</p>
+                    <p className='text-2xl text-black font-semibold lg:text-2xl dark:text-white'>{data.value}</p>
                 </div>
 
          {/**the progress bar per stat */}
@@ -34,8 +34,8 @@ const Stat = () => {
                     </div>
 
                     <div>
-                        <p className='text-[#606060] text-[9px] lg:block md:block xl:hidden'> vs. prev month</p>
-                        <p className='text-[#606060] text-xs hidden lg:hidden md:hidden xl:block'>vs. previous month</p>
+                        <p className='text-[#606060] text-[9px] lg:block md:block xl:hidden dark:text-white'> vs. prev month</p>
+                        <p className='text-[#606060] text-xs hidden lg:hidden md:hidden xl:block  dark:text-white'>vs. previous month</p>
                     </div>
                 </div>
 
