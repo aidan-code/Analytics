@@ -22,8 +22,8 @@ const Stat = () => {
 
                 {/**the title & value per stat */   }
                 <div className='text-lg text-xl my-5'>
-                    <p className='text-xl lg:text-base text-[#898989] dark:text-white'>{data.title}</p>
-                    <p className='text-2xl text-black font-semibold lg:text-2xl dark:text-white'>{data.value}</p>
+                    <p className='text-sm lg:text-base text-[#898989] dark:text-white'>{data.title}</p>
+                    <p className='text-1xl text-black font-semibold lg:text-2xl dark:text-white'>{data.value}</p>
                 </div>
 
          {/**the progress bar per stat */}

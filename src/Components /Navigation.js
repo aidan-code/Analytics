@@ -7,7 +7,7 @@ import bell from "../Assets/solar_bell-outline.svg"
 import profile from '../Assets/profile.png'
 import dayjs from 'dayjs';
 import { IoCalendarOutline } from 'react-icons/io5';
-import { PiBellLight } from 'react-icons/pi';
+import { PiBell, PiBellLight } from 'react-icons/pi';
 
 const Navigation = ({onclick, state}) => {
 
@@ -29,9 +29,9 @@ const Navigation = ({onclick, state}) => {
 {/**Dashboard title */}
         <div className='w-9/12 flex items-center'>
             <div className='w-[20px] mx-2 lg:hidden' onClick={onclick}v>
-                <div className='h-0.5 border bg-black my-1 rounded-full'></div>
-                <div className='h-0.5 border bg-black my-1 rounded-full'></div>
-                <div className='h-0.5 border bg-black my-1 rounded-full'></div>
+                <div className='h-0.5  bg-black my-1 rounded-full dark:bg-[#e5eaef45]'></div>
+                <div className='h-0.5  bg-black my-1 rounded-full dark:bg-[#e5eaef45]'></div>
+                <div className='h-0.5  bg-black my-1 rounded-full dark:bg-[#e5eaef45]'></div>
             </div>
                 <p className='font-semibold lg:text-lg text-xs dark:text-white'>Dashboard</p>
         </div>
@@ -47,10 +47,11 @@ const Navigation = ({onclick, state}) => {
                 <div className='mx-2 hidden lg:block'>
                     <input className='text-[#A3A3A3] outline-none dark:bg-[#e5eaef00]' placeholder="Search..." type='text'/>
                 </div>
+
                 <div className='bg-white w-full absolute top-20  left-0 lg:hidden'>
                     <div className={search ? 'border-back border rounded-full p-3 flex items-center w-100% lg:hidden': " lg:block hidden border-back border rounded-full p-3  w-1/3"}>
                        <div className='flex items-center'>
-                            <IconContext.Provider value={{color: 'gray', size: '20px'}}>
+                            <IconContext.Provider value={{color: 'gray', size: `${"15px lg:20px"}`}}>
                             <CiSearch />
                             </IconContext.Provider>
                             <div className='mx-2'>
@@ -61,18 +62,19 @@ const Navigation = ({onclick, state}) => {
                     </div>
                 </div>
             </div>
-            <IconContext.Provider value={{color :`${state ? "white" : "black"}`, size: '19px'}}>
-            <div className='flex items-center mx-2 '>
-                <IoCalendarOutline/>
 
-                <div>
-                    <p className='mx-3 font-medium hidden lg:block lg:w-full lg:text-xs xl:text-sm dark:text-white'>{date}</p>
-                </div>
+            <IconContext.Provider value={{color :`${state ? "white" : "black"}`, size: '15px'}}>
+                <div className='flex items-center mx-2  group'>
+                    <IoCalendarOutline/>
 
-                <div className='rounded-full border border-back p-1 ml-2 dark:border-0'>
-                    <PiBellLight />
-                    { /**<img src={bell} className='w-3 h-3 lg:h-auto lg:w-auto'/>*/}
-                </div>
+                    <div>
+                        <p className='mx-3 font-medium hidden hover:block lg:block lg:w-full lg:text-xs xl:text-sm dark:text-white'>{date}</p>
+                    </div>
+
+                    <div className='rounded-full border border-back p-1 ml-2 dark:border-0'>
+                        <PiBell />
+                        { /**<img src={bell} className='w-3 h-3 lg:h-auto lg:w-auto'/>*/}
+                    </div>
             </div>
 
 
