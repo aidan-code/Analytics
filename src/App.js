@@ -42,9 +42,9 @@ function App() {
         <Sidebar change ={handleChange} state={clicker} showNav={navHide} onclick ={handleShow}/>
       </div>
 
-      <div className='border border-[#E5EAEF] flex flex-col w-full h-dvh dark:border-[#e5eaef45]'>
-        <Navigation onclick ={handleShow}/>
-        <div className=' py-6 px-4 h-full bg-[#FAFAFA]  dark:bg-dark lg:grid grid-cols-3 grid-rows-2 gap-3'>
+      <div className='border border-l-[#E5EAEF] flex flex-col w-full h-dvh dark:border-l-[#e5eaef45] dark:bg-dark'>
+        <Navigation onclick ={handleShow} state = {clicker}/>
+        <div className=' py-6 px-4 h-full bg-[#FAFAFA] overflow-scroll dark:bg-dark lg:grid grid-cols-3 grid-rows-2 gap-3'>
           <div className="col-span-2 overflow-hidden">
               <Charts  greyDark={theme === "dark" ? "#e5eaef45": "#EAEAEA"}/>
           </div>
@@ -55,7 +55,7 @@ function App() {
         </div>
 
           {/**the table section */}
-          <div className="col-span-2 my- lg:my-0 ">
+          <div className="col-span-2 my-3 lg:my-0 ">
             <Table />
          </div>
 

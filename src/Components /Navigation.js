@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { IconContext } from 'react-icons';
-import { CiSearch } from "react-icons/ci";
+import { CiBellOn, CiCalendar, CiSearch } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import group from '../Assets/Group.svg'
 import bell from "../Assets/solar_bell-outline.svg"
 import profile from '../Assets/profile.png'
 import dayjs from 'dayjs';
+import { IoCalendarOutline } from 'react-icons/io5';
+import { PiBellLight } from 'react-icons/pi';
 
-const Navigation = ({onclick}) => {
+const Navigation = ({onclick, state}) => {
 
     const[userProfile, setUserProfile] = useState({
         name :"Justin Bergson",
@@ -23,7 +25,7 @@ const Navigation = ({onclick}) => {
         setSearch(!search)
     }
   return (
-    <div className='border-b border-b-[#E5EAEF] w-full flex justify-between items-center p-3 font-sans border-b-1 dark:border dark:border-b-[#e5eaef45] relative'>
+    <div className='border-b border-b-[#E5EAEF] w-full flex justify-between items-center p-3 font-sans border-b-1 dark:border- dark:border-b-[#e5eaef45] relative'>
 {/**Dashboard title */}
         <div className='w-9/12 flex items-center'>
             <div className='w-[20px] mx-2 lg:hidden' onClick={onclick}v>
@@ -59,16 +61,17 @@ const Navigation = ({onclick}) => {
                     </div>
                 </div>
             </div>
-
+            <IconContext.Provider value={{color :`${state ? "white" : "black"}`, size: '19px'}}>
             <div className='flex items-center mx-2 '>
-                <img src={group} />
+                <IoCalendarOutline/>
 
                 <div>
                     <p className='mx-3 font-medium hidden lg:block lg:w-full lg:text-xs xl:text-sm dark:text-white'>{date}</p>
                 </div>
 
-                <div className='rounded-full border border-back p-1 ml-2'>
-                    <img src={bell} className='w-3 h-3 lg:h-auto lg:w-auto'/>
+                <div className='rounded-full border border-back p-1 ml-2 dark:border-0'>
+                    <PiBellLight />
+                    { /**<img src={bell} className='w-3 h-3 lg:h-auto lg:w-auto'/>*/}
                 </div>
             </div>
 
@@ -84,7 +87,7 @@ const Navigation = ({onclick}) => {
                 <IoIosArrowDown />
                 
             </div>
-
+            </IconContext.Provider>
         </div>
 
     </div>

@@ -91,22 +91,22 @@ const Sidebar = ({change, state, showNav, onclick }) => {
         <div className='flex flex-col'>
 
             <div className='pb-6 pt-5 px-5'>
-                <img src={vector}/>
+                <img src={vector} alt='logo'/>
             </div>
         
-            <div className='flex flex-col'>
+            <div className='flex flex-col items-center'>
                 {Navdata.map((data) => {
                         return(
                             <div key={data.id} className='group px-5 py-0 mb-3 relative ' onClick={setActive}>
-                                <img src={data.image}/>
+                                <img src={data.image} alt='logos'/>
                                 <div className={data.id || data.id === 1? 'absolute right-0 top-1 h-4/5 w-[3px] bg-black rounded-l-lg hidden group-hover:block ' : 'hidden'}></div>
-                                <div className={ data.id === 1? 'absolute right-0 top-1 h-4/5 w-[3px] bg-black rounded-l-lg  group-hover:block ' : 'hidden'}></div>
+                                <div className={ data.id === 1? 'absolute right-0 top-1 h-4/5 w-[3px] bg-black rounded-l-lg  group-hover:block dark:bg-[#e5eaef45] ' : 'hidden'}></div>
 
                             </div>
                         ) 
                     })}
 
-                    <div className='bg-white border  px-1 flex flex-col mx-4 items-center py-2 rounded-full relative z-[0] dark:bg-dark dark:  border-white' onClick={change} >
+                    <div className='bg-white border  px-2 flex flex-col mx-1  items-center py-2 rounded-full relative z-[0] dark:bg-dark dark:  border-[#e5eaef45]' onClick={change} >
                         <div className={state ? "h-[30px] w-[30px] absolute rounded-full showlight bg-[#34CAA5] z-[-1] transition-transform origin-top duration-200 ease-in-out" : "h-[30px] w-[30px] absolute rounded-full top-1 translate-y-0 bg-[#34CAA5] z-[-1] transition duration-200 ease-in-out"} ></div>
                             <IconContext.Provider value={{ size: "20px", color:`${state ? "grey" : "white"}`}}>
                                 <div className='mb-6 cursor-pointer'>
