@@ -46,16 +46,16 @@ function App() {
         <Navigation onclick ={handleShow}/>
         <div className=' py-6 px-4 h-full bg-[#FAFAFA]  dark:bg-dark lg:grid grid-cols-3 grid-rows-2 gap-3'>
           <div className="col-span-2 overflow-hidden">
-              <Charts  />
+              <Charts  greyDark={theme === "dark" ? "#e5eaef45": "#EAEAEA"}/>
           </div>
 
         {/**the stat section */}
-        <div className='h-full my-5 lg:my-0 '>
+        <div className='h-auto my-5 lg:my-0 '>
           <Stat />
         </div>
 
           {/**the table section */}
-          <div className="col-span-2 my-5 lg:my-0 ">
+          <div className="col-span-2 my- lg:my-0 ">
             <Table />
          </div>
 

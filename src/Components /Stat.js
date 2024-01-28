@@ -6,11 +6,11 @@ import Lines from '../Resources/linee'
 
 const Stat = () => {
   return (
-    <div className='grid grid-cols-2 grid-rows-2  gap-2.5 font-sans text-xs' >
+    <div className='grid grid-cols-2 grid-rows-2 gap-2.5 font-sans text-xs' >
 
         {Statdata.map((data, index) => {
             return (
-            <div key={index} className='p-2  bg-white rounded-xl relative border border-[#EDF2F7] h-full lg:h-[195px] sm:py-3 sm px-2 hover:shadow-xl  dark:bg-dark dark:border-[#e5eaef45]'>
+            <div key={index} className='p-2  bg-white rounded-xl relative border border-[#EDF2F7] h-full lg:h-[195px] sm:py-3 sm px-2 hover:shadow-xl lg:px-3 dark:bg-dark dark:border-[#e5eaef45]'>
         {/**the icon per stat */}
                 <div className='flex items-center justify-between my-1'>
                     <img src={data.svg} alt="check" />

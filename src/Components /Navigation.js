@@ -43,7 +43,7 @@ const Navigation = ({onclick}) => {
                 <CiSearch />
                 </IconContext.Provider>
                 <div className='mx-2 hidden lg:block'>
-                    <input className='text-[#A3A3A3] outline-none' placeholder="Search..." type='text'/>
+                    <input className='text-[#A3A3A3] outline-none dark:bg-[#e5eaef00]' placeholder="Search..." type='text'/>
                 </div>
                 <div className='bg-white w-full absolute top-20  left-0 lg:hidden'>
                     <div className={search ? 'border-back border rounded-full p-3 flex items-center w-100% lg:hidden': " lg:block hidden border-back border rounded-full p-3  w-1/3"}>
@@ -52,7 +52,7 @@ const Navigation = ({onclick}) => {
                             <CiSearch />
                             </IconContext.Provider>
                             <div className='mx-2'>
-                                <input className='text-[#A3A3A3] outline-none border-0 bg-transparent'  placeholder="Search..." type='text'/>
+                                <input className='text-[#A3A3A3] outline-none border-0 '  placeholder="Search..." type='text'/>
                             </div>
                        </div>
                    

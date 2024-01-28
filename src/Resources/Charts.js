@@ -21,7 +21,7 @@ const monthUpdate =
             values: ["7.00", "16.000", "5.000", "26.000", '15.000', '45.000', '15.000'],
         }
     
-const Charts = () => {
+const Charts = ({greyDark}) => {
 
     const [durate, setdurate] = useState(1)
 
@@ -108,14 +108,17 @@ const Charts = () => {
               },
               border:{
                 dash:[10, 10],
-                color:"#EAEAEA"
+                color:greyDark,
+                width:0,
               },
               grace: "10%",
             ticks: {
                 stepSize:4,
                 precision: 1,
                 maxTicksLimit: 9,
+                margin:10
               },
+             
              
           },
         },

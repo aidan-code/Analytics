@@ -13,17 +13,17 @@ const ProgressBar = (props) => {
   return (
     <div  className='h-full mb-4 font-sans text-[9px] lg:text-base'> 
         <p className='font-semibold text-s mb-2'>{props.name}</p>
-        <div className='h-[15px] w-full bg-[#F5F5F5] rounded-full mb-3 '>
+        <div className='h-[15px] w-full bg-[#F5F5F5] dark:bg-[#e5eaef45] rounded-full mb-3 '>
             <div style={{
                 height:"100%",
                 width:`${filled}%`,
                 backgroundColor:props.color,
-                transition: "width 0.5s ease-in-out",
+                transition: "width 1s ease-in-out",
                 borderRadius: "50px",
             }}></div>
         </div>
         <div className='flex items-center justify-between' >
-            <p className='mb-1'>{props.progress}%</p>
+            <p className='mb-1'>{props.progress}</p>
             <p>{props.increment}</p>
         </div>
     </div>

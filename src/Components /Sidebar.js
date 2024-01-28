@@ -84,7 +84,7 @@ const Sidebar = ({change, state, showNav, onclick }) => {
         console.log("true")
     }
   return (
-    <div className={showNav ? " border border-[#E5EAEF]bg-[#FFFFFF] slideout fixed z-50 w-2/4 flex items-start justify-start h-full dark:bg-dark dark:border-r-[e5eaef45]"  : "hidden lg:block lg:relative" }>
+    <div className={showNav ? " border border-[#E5EAEF] bg-[#FFFFFF] slideout fixed z-50 w-2/4 flex items-start justify-start h-full dark:bg-dark dark:border-r-[e5eaef45]"  : "hidden lg:block lg:relative" }>
 
         <div className='bg-back h-[60rem] flex flex-col justify-between dark:bg-dark d'>
 

@@ -13,11 +13,11 @@ const Table = () => {
         </div>
 
         <div className='w-[100%] lg:w-full lg:text-sm text-[9px] overflow-scroll lg:overflow-auto'>
-            <table className='table-auto w-full font-sans dark:bg-transparent ' >
+            <table className='table-fixed w-full font-sans dark:bg-transparent ' >
                 <thead className=' border-b border-back text-[#9CA4AB] dark:border-[#e5eaef45]'>
                     <tr className='text-left'>
                         <th className='py-2 mr-2 w-96'>Name</th>
-                        <th className='w-96'>Date</th>
+                        <th className=''>Date</th>
                         <th className=''>Amount</th>
                         <th className=''>Status</th>
                         <th className='p-0'>Invoice</th>
@@ -35,9 +35,12 @@ const Table = () => {
                                 <td className='text-[#737373] font-thin'>{data.date}</td>
                                 <td >{data.Amount}</td>
                                 <td className={data.status === "Paid" ? 'text-[#34CAA5]' : "text-[#ED544E]"}>{data.status}</td>
-                                <td className=' flex justify-start text-center w-auto p-0'>
-                                    <img src={savee} className='mx-2'/>
-                                    <p className='font-sm'>View</p>
+                                <td className=' flex text-center p-0 items-center'>
+                                    <div className='flex'>
+                                        <img src={savee} className='mx-2'/>
+                                        <p className='font-sm'>View</p>
+                                    </div>
+                                    
                                 </td>
                             </tr>
                         )
