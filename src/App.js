@@ -23,7 +23,6 @@ function App() {
       document.documentElement.classList.add("dark")
     } else{
       document.documentElement.classList.remove("dark")
-      console.log(theme)
     }
   }, [theme])
 
@@ -32,7 +31,7 @@ function App() {
   const handleChange =() =>{
     setTheme(theme === "light" ? "dark" : "light")
     setClicker(!clicker)
-    console.log(theme)
+   
   }
 
   return (

@@ -13,7 +13,7 @@ const Table = () => {
         </div>
 
         <div className='w-[100%] lg:w-full lg:text-sm text-[9px] overflow-scroll lg:overflow-auto'>
-            <table className='table-auto w-[400px] font-sans dark:bg-transparent overflow-scroll' >
+            <table className='table-auto w-[400px] font-sans dark:bg-transparent overflow-scroll sm:w-[100%]' >
                 <thead className=' border-b border-back text-[#9CA4AB] dark:border-[#e5eaef45]'>
                     <tr className='text-left'>
                         <th className='py-2 mr-2 w-1/2'>Name</th>

@@ -27,7 +27,15 @@ const Charts = ({greyDark}) => {
 
     const[displayData, setDisplayData] = useState([])
 
-    // console.log(monthUpdate['label01'])
+    const [width, setWidth] = useState(window.innerWidth)
+
+    console.log(width)
+
+    useEffect(() => {
+        const handleResize = () => {
+          setWidth(window.innerWidth);
+        };
+    });
 
 
 
@@ -64,7 +72,7 @@ const Charts = ({greyDark}) => {
             data: ["7.00", "16.000", "5.000", "26.000", '15.000', '45.000', '15.000', '23.000', '35.000', '14.000', '30.000', '26.000'],
             borderRadius:50,
             borderWidth: 0,
-            barThickness: 35,
+            barThickness:`${width < 600 ? 15 : 35}`,
             hoverBackgroundColor: (context) =>{
                 const chart = context.chart;
                 const { ctx, chartArea} = chart;
